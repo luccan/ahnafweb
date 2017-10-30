@@ -188,7 +188,7 @@
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
         <div id="myCarouselInner" class="carousel-inner" role="listbox">
-          <div class="carousel-item active">
+          <div class="item active">
             <img class="first-slide" src="./img/sample.jpg">
             <div class="container">
               <div class="carousel-caption d-none d-md-block text-left">
@@ -272,12 +272,12 @@
 						console.log("Response", response);
 						$('#response-count').html(response.result.values.length.toString());
 						var carousel_html = ''
-						var carousel_base_html = '<div class="carousel-item active"><img class="first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
+						var carousel_base_html = '<div class="item active"><img class="first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
 
 						var result = response.result.values;
 						for (var i = 0; i < result.length; i++) {
 							if (i==1){
-								var carousel_base_html = carousel_base_html.replace('<div class="carousel-item active">', '<div class="carousel-item">');
+								var carousel_base_html = carousel_base_html.replace('<div class="item active">', '<div class="item">');
 							}
 
 							var item = carousel_base_html.replace('[link-img]', result[i][2]);
