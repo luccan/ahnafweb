@@ -241,6 +241,26 @@
 	<!--google api-->
 	<script src="https://apis.google.com/js/api.js"></script>
 	<script>
+		function shuffle(array) {
+			var currentIndex = array.length, temporaryValue, randomIndex;
+
+			// While there remain elements to shuffle...
+			while (0 !== currentIndex) {
+
+				// Pick a remaining element...
+				randomIndex = Math.floor(Math.random() * currentIndex);
+				currentIndex -= 1;
+
+				// And swap it with the current element.
+				temporaryValue = array[currentIndex];
+				array[currentIndex] = array[randomIndex];
+				array[randomIndex] = temporaryValue;
+			}
+
+			return array;
+		}
+		
+	
 		function loadClient() {
 			gapi.client.setApiKey('AIzaSyDDgfTdBzh-W8VIE0lvcFqZ0Ne2YzAPSHo');
 			return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/sheets/v4/rest")
@@ -263,7 +283,7 @@
 						var carousel_html = ''
 						var carousel_base_html = '<div class="item active"><img class="img-responsive first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h5>[name]</h1><p>[message]</p></div></div></div>'
 
-						var result = response.result.values;
+						var result = shuffle(response.result.values);
 						for (var i = 0; i < result.length; i++) {
 							if (i==1){
 								var carousel_base_html = carousel_base_html.replace('<div class="item active">', '<div class="item">');
