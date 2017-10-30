@@ -26,6 +26,24 @@
 
  <body>
 
+		<!-- Modal -->
+		<div id="modal-ahnaf-face" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Hello</h4>
+				</div>
+				<div class="modal-body">
+				<img class="img-responsive" src="./img/sample.jpg" alt="myFace"></img>
+				</div>
+			</div>
+
+			</div>
+		</div>
+ 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -163,7 +181,9 @@
 
 	<!--animation scripts-->
 	<script>
-
+		$(window).on('load',function(){
+        $('#modal-ahnaf-face').modal('show');
+    });
 	</script>
 
 </body>
