@@ -187,7 +187,7 @@
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
-        <div class="carousel-inner" role="listbox">
+        <div id="myCarouselInner" class="carousel-inner" role="listbox">
           <div class="carousel-item active">
             <img class="first-slide" src="./img/sample.jpg">
             <div class="container">
@@ -195,26 +195,6 @@
                 <h1>Example headline.</h1>
                 <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="second-slide" src="./img/sample.jpg">
-            <div class="container">
-              <div class="carousel-caption d-none d-md-block">
-                <h1>Another example headline.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="third-slide" src="./img/sample.jpg">
-            <div class="container">
-              <div class="carousel-caption d-none d-md-block text-right">
-                <h1>One more for good measure.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
               </div>
             </div>
           </div>
@@ -280,12 +260,25 @@
 		function execute() {
 			return gapi.client.sheets.spreadsheets.values.get({
 				"spreadsheetId": "1NLXEzIB5_0v1NsbbPs8BoADQGjvPBar4rxjYpSDMgms",
-				"range": "B2:G10"
+				"range": "B2:G100000"
 			})
 					.then(function(response) {
 						// Handle the results here (response.result has the parsed body).
 						console.log("Response", response);
 						$('#response-count').html(response.result.values.length.toString());
+						var carousel_html = ''
+						var carousel_base_html = '<div class="carousel-item active"><img class="first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
+						
+						var result = response.result.values;
+						for (var i = 0; i < result.length; i++) {
+							var item = carousel_base_html.replace('[link-img]', result[i][2]);
+							var item = item.replace('[name]', result[i][3]);
+							var item = item.replace('[message]', result[i][1]);
+							carousel_html += item;
+						}
+						
+						$('#myCarouselInner').html(carousel_html);
+						
 						console.log('got some response from google api');
 					}, function(error) {
 						console.error("Execute error", error);
