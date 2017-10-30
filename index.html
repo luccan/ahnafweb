@@ -134,7 +134,7 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <button id="click-me" type="button" style="background-color: white; color: red; border-color: red; width: 20%; height: 10%; position: fixed; top: 35%; left: 40%; z-index:100;">SUPPORT ME!!</button>
+    <button id="click-me" type="button" style="background-color: white; color: red; border-color: red; width: 200px; height: 100px; position: fixed; top: 35%; left: 40%; z-index:100;">SUPPORT ME!!</button>
 
     <div class="container marketing">
       <div class="row">
@@ -257,15 +257,15 @@
           var adjective = ['annoying', 'chocolaty', 'kissable', 'thick-skinned', 'slow', 'heavenly smelling'];
           var noun = ['pussy', 'sloth', 'apache helicopter', 'deodrant'];
           var finalMessage = message[Math.floor(Math.random() * message.length)] + ' ' + adjective[Math.floor(Math.random() * adjective.length)] + ' ' + noun[Math.floor(Math.random() * noun.length)];
-          document.getElementById('form-message').placeholder = finalMessage;
+          document.getElementById('form-message').text = finalMessage;
         });
         $('#click-me').click(function(){
           $('#modal-form').modal('show');
-          var message = ['Good Bye', 'See you soon', 'I love you', 'We will miss you', 'You have lovely lips', 'Your eyes stare into my soul'];
-          var adjective = ['annoying', 'chocolaty', 'kissable', 'thick-skinned', 'slow', 'heavenly smelling'];
-          var noun = ['pussy', 'sloth', 'apache helicopter', 'deodrant'];
+          var message = ['Good Bye', 'See you soon', 'I love you', 'We will miss you', 'You have lovely lips', 'Your eyes stare into my soul','Good luck on your journey','Fuck you and your ass you','Adios','Sampai Jumpa','Ta-ta,','Bidai','I hope I will never ever see you again', 'I hope you will remember me,', 'Remember our first meeting? You','I will remember you', 'I will not forget you, you','Ciaoz'];
+          var adjective = ['annoying', 'chocolaty', 'kissable', 'thick-skinned', 'slow', 'heavenly smelling','lovely','brilliant','enjoyable','funny','tasty','handsome','disgusting','entertaining','fuckable','muscular','toned','fat','lazy','beer-bellied','haraam','halaal'];
+          var noun = ['pussy', 'sloth', 'apache helicopter', 'deodrant','twat','lad','hunk','woman','transvestite','Research Assistant','man','boy','kid','girl','zombie','dude','bro','animal','beast'];
           var finalMessage = message[Math.floor(Math.random() * message.length)] + ' ' + adjective[Math.floor(Math.random() * adjective.length)] + ' ' + noun[Math.floor(Math.random() * noun.length)];
-          document.getElementById('form-message').placeholder = finalMessage;
+          document.getElementById('form-message').text = finalMessage;
         });
         function blink(item) {
             $('#blinker').fadeOut(500);
