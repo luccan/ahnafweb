@@ -284,7 +284,7 @@
 					.then(function(response) {
 						// Handle the results here (response.result has the parsed body).
 						console.log("Response", response);
-						$('#response-count').html=response.result.values.length.toString();
+						$('#response-count').html(response.result.values.length.toString());
 						console.log('got some response from google api');
 					}, function(error) {
 						console.error("Execute error", error);
@@ -298,7 +298,7 @@
 		
 		$( document ).ready(function() {
 				console.log( "ready!" );
-				authenticate().then(loadClient)
+				authenticate().then(loadClient);
 				execute();
 		});
 	</script>
