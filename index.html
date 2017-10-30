@@ -327,7 +327,7 @@
 						var max_item = 25;
 						
 						var result = shuffle(response.result.values);
-						for (var i = 0; i < Math.max(result.length,max_item); i++) {
+						for (var i = 0; i < Math.min(result.length,max_item); i++) {
 							if (i==1){
 								var carousel_base_html = carousel_base_html.replace('<div class="item active">', '<div class="item">');
 							}
@@ -341,7 +341,7 @@
 						$('#myCarouselInner').html(carousel_html);
 
 						var carousel_ol_html = ''
-						for (var i = 0; i < Math.max(result.length,max_item); i++) {
+						for (var i = 0; i < Math.min(result.length,max_item); i++) {
 							carousel_ol_html+='<li data-target="#myCarousel" data-slide-to="' + i.toString()
 							if(i==0){
 								carousel_ol_html += ' class="active"'
@@ -365,8 +365,8 @@
 				//execute();
 		});
 	</script>
-	<button onclick="loadClient()">authorize and load</button>
-	<button onclick="execute()">execute</button>
+	<!--button onclick="loadClient()">authorize and load</button>
+	<button onclick="execute()">execute</button-->
 
 
 </body>
