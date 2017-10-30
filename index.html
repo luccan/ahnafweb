@@ -275,7 +275,18 @@
 						// Handle the results here (response.result has the parsed body).
 						console.log("Response", response);
 						$('#response-count').html(response.result.values.length.toString());
-						var carousel_html = '<div class="carousel-item active"><img class="first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
+						var carousel_html = ''
+						var carousel_base_html = '<div class="carousel-item active"><img class="first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
+						
+						var result = response.result.values;
+						for (var i = 0; i < result.length; i++) {
+							var item = carousel_base_html.replace('[link-img]', result[i][2]);
+							var item = item.replace('[name]', result[i][3]);
+							var item = item.replace('[message]', result[i][1]);
+							carousel_html += item;
+						}
+						
+						$('#myCarouselInner').html(carousel_html);
 						
 						console.log('got some response from google api');
 					}, function(error) {
