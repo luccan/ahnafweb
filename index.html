@@ -331,10 +331,19 @@
 							if (i==1){
 								var carousel_base_html = carousel_base_html.replace('<div class="item active">', '<div class="item">');
 							}
-
-							var item = carousel_base_html.replace('[link-img]', result[i][2]);
-							var item = item.replace('[name]', result[i][3]);
-							var item = item.replace('[message]', result[i][1]);
+							
+							var item = ''
+							
+							if (result[i][2] == '' or result[i][2] == null){
+								item = carousel_base_html.replace('[link-img]', './img/grad-ceremony.jpg');
+							}
+							else {
+								item = carousel_base_html.replace('[link-img]', result[i][2]);
+							}
+							
+							item = carousel_base_html.replace('[link-img]', result[i][2]);
+							item = item.replace('[name]', result[i][3]);
+							item = item.replace('[message]', result[i][1]);
 							carousel_html += item;
 						}
 
