@@ -298,6 +298,14 @@
 		
 		$( document ).ready(function() {
 				console.log( "ready!" );
+				//sleep 2s
+				var start = new Date().getTime();
+				var milliseconds = 2000;
+				for (var i = 0; i < 1e7; i++) {
+					if ((new Date().getTime() - start) > milliseconds){
+						break;
+					}
+				}
 				authenticate().then(loadClient);
 				execute();
 		});
