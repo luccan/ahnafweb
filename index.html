@@ -25,6 +25,7 @@
 </head>
 
  <body>
+		<p id="response-count"></p>
  
 		<!-- Modal -->
 		<div id="modal-form" class="modal fade" role="dialog">
@@ -252,6 +253,53 @@
         //$('#modal-ahnaf-face').modal('show');
     });
 	</script>
+	
+	<!--google api-->
+	<script src="https://apis.google.com/js/api.js"></script>
+	<script>
+		function authenticate() {
+			return gapi.auth2.getAuthInstance()
+					.signIn({scope: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.readonly"})
+					.then(function() {
+						console.log("Sign-in successful");
+					}, function(error) {
+						console.error("Error signing in", error);
+					});
+		}
+		function loadClient() {
+			return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/sheets/v4/rest")
+					.then(function() {
+						console.log("GAPI client loaded for API");
+					}, function(error) {
+						console.error("Error loading GAPI client for API");
+					});
+		}
+		// Make sure the client is loaded and sign-in is complete before calling this method.
+		function execute() {
+			return gapi.client.sheets.spreadsheets.values.get({
+				"spreadsheetId": "1NLXEzIB5_0v1NsbbPs8BoADQGjvPBar4rxjYpSDMgms",
+				"range": "B2:G2"
+			})
+					.then(function(response) {
+						// Handle the results here (response.result has the parsed body).
+						console.log("Response", response);
+						$('#response-count').html=response.count.toString();
+					}, function(error) {
+						console.error("Execute error", error);
+					});
+		}
+		gapi.load("client:auth2", function() {
+			gapi.auth2.init({client_id: 'AIzaSyDDgfTdBzh-W8VIE0lvcFqZ0Ne2YzAPSHo'});
+		});
+		
+		
+		$( document ).ready(function() {
+				console.log( "ready!" );
+		});
+	</script>
+	<button onclick="authenticate().then(loadClient)">authorize and load</button>
+	<button onclick="execute()">execute</button>
+
 
 </body>
 
