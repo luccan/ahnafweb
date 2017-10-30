@@ -26,7 +26,7 @@
 </head>
 
  <body>
-		<p id="response-count"></p>
+		<!-- <p id="response-count"></p> -->
 		<!-- Modal -->
 		<div id="modal-form" class="modal fade" role="dialog">
 			<div class="modal-dialog">
@@ -50,22 +50,51 @@
 						window.open(form_url, '_blank');
 
 						return false;">
-					<div class="row"><div class="col-xs-12"><p class="lead" style="font-weight:bolder;text-align:center;margin-bottom: 0px;">
-						Sample Form
-					</p></div></div>
-					<div class="row"><div class="col-md-4 col-sm-5 col-xs-offset-1"><p class="lead smaller">Do you know me?</p></div>
-					<div class="col-md-7 col-sm-6"><input id="form-know-me" type="text" class="form-control" required></input></div></div>
-					<div class="row"><div class="col-md-4 col-sm-5 col-xs-offset-1"><p class="lead smaller">Message for me?</p></div>
-					<div class="col-md-7 col-sm-6"><input id="form-message" type="text" class="form-control" required></input></div></div>
-					<div class="row"><div class="col-md-4 col-sm-5 col-xs-offset-1"><p class="lead smaller">Link to any image you wanna send me :3</p></div>
-					<div class="col-md-7 col-sm-6"><input id="form-img-link" type="text" class="form-control" ></input></div></div>
-					<div class="row"><div class="col-md-4 col-sm-5 col-xs-offset-1"><p class="lead smaller">Leave your name here <3</p></div>
-					<div class="col-md-7 col-sm-6"><input id="form-name" type="text" class="form-control"></input></div></div>
-					<div class="row"><div class="col-md-4 col-sm-5 col-xs-offset-1"><p class="lead smaller">If you want me to contact you, leave your contact below :)</p></div>
-					<div class="col-md-7 col-sm-6"><input id="form-contact" type="text" class="form-control" ></input></div></div>
-					<div class=row><div class="col-md-7 col-md-offset-5 col-sm-6 col-sm-offset-6 col-xs-6 col-xs-offset-6">
-						<button id="form-submit" style="background-color: gray;" class="btn button-default">Proceed to show your love!</button>
-					</div></div>
+					<div class="row">
+            <div class="col-md-4 col-sm-5">
+              <p class="lead smaller">Do you know me?</p>
+            </div>
+					  <div class="col-md-8 col-sm-7">
+              <input id="form-know-me" type="text" class="form-control" required></input>
+            </div>
+          </div>
+					<div class="row">
+            <div class="col-md-4 col-sm-5">
+              <p class="lead smaller">Message for me?</p>
+            </div>
+					  <div class="col-md-8 col-sm-7">
+              <textarea id="form-message" style="margin-bottom: 10px" type="text" class="form-control" required cols="40" rows="5"></textarea>
+            </div>
+          </div>
+					<div class="row">
+            <div class="col-md-4 col-sm-5">
+              <p class="lead smaller">Link to any image you wanna send me :3</p>
+            </div>
+					  <div class="col-md-8 col-sm-7">
+              <input id="form-img-link" type="text" class="form-control" ></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-5">
+              <p class="lead smaller">Leave your name here <3</p>
+            </div>
+					  <div class="col-md-8 col-sm-7">
+              <input id="form-img-link" type="text" class="form-control" ></input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-5">
+              <p class="lead smaller">If you want me to contact you, leave your contact :)</p>
+            </div>
+					  <div class="col-md-8 col-sm-7">
+              <input id="form-img-link" type="text" class="form-control" ></input>
+            </div>
+          </div>
+					<div class=row>
+            <div class="col-md-12" style="text-align: center">
+						  <button id="form-submit" style="background-color: gray;" class="btn button-default">Proceed to show your love!</button>
+					  </div>
+          </div>
 					</form>
 				</div>
 			</div>
@@ -105,7 +134,7 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <button id="click-me" type="button" style="background-color: white; color: red; border-color: red; width: 20%; height: 10%; position: fixed; top: 35%; left: 40%; z-index:100;">CLICK ME!!</button>
+    <button id="click-me" type="button" style="background-color: white; color: red; border-color: red; width: 20%; height: 10%; position: fixed; top: 35%; left: 40%; z-index:100;">SUPPORT ME!!</button>
 
     <div class="container marketing">
       <div class="row">
@@ -127,6 +156,7 @@
           </p>
           <p>Have you guys heard of this amazing feature by DBS called <span style="font-weight: bold; font-size: 16px; color: red;">PAYLAH!</span></p>
           <p>Support me @ <a id="number" style="color: blue; font-weight: bold; font-size: 20px">8681 3648</a>
+          <p id="response-count"> 💖 supporters</p>
         </div>
       </div>
 
@@ -203,7 +233,7 @@
     <div class="container">
       <footer>
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2017 Ahnaf Siddiqi Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
     </div><!-- /.container -->
@@ -219,12 +249,21 @@
 		$(window).on('load',function(){
 				// $('#modal-form').modal('show');
         $('#modal-ahnaf-face').modal('show');
-        console.log('js loaded');
         $('#number').click(function(){
           $('#modal-form').modal('show');
+          var message = ['Good Bye', 'See you soon', 'I love you', 'We will miss you', 'You have lovely lips', 'Your eyes stare into my soul'];
+          var adjective = ['annoying', 'chocolaty', 'kissable', 'thick-skinned', 'slow', 'heavenly smelling'];
+          var noun = ['pussy', 'sloth', 'apache helicopter', 'deodrant'];
+          var finalMessage = message[Math.floor(Math.random() * message.length)] + ' ' + adjective[Math.floor(Math.random() * adjective.length)] + ' ' + noun[Math.floor(Math.random() * noun.length)];
+          document.getElementById('form-message').placeholder = finalMessage;
         });
         $('#click-me').click(function(){
           $('#modal-form').modal('show');
+          var message = ['Good Bye', 'See you soon', 'I love you', 'We will miss you', 'You have lovely lips', 'Your eyes stare into my soul'];
+          var adjective = ['annoying', 'chocolaty', 'kissable', 'thick-skinned', 'slow', 'heavenly smelling'];
+          var noun = ['pussy', 'sloth', 'apache helicopter', 'deodrant'];
+          var finalMessage = message[Math.floor(Math.random() * message.length)] + ' ' + adjective[Math.floor(Math.random() * adjective.length)] + ' ' + noun[Math.floor(Math.random() * noun.length)];
+          document.getElementById('form-message').placeholder = finalMessage;
         });
         function blink(item) {
             $('#blinker').fadeOut(500);
@@ -234,7 +273,7 @@
         }
 
         setInterval(blink, 1000);
-        console.log('js loaded2 ');
+
     });
 	</script>
 
