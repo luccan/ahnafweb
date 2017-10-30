@@ -86,22 +86,8 @@
 				<div class="modal-body">
 				  <img class="img-responsive" src="./img/grad.jpg" alt="myFace"></img>
           <hr>
-          <h5>Hello, I am Ahnaf</h5>
           <div>
-            <p>
-              Thank you for coming to my website. I hope you will hear me out.
-              I have been a part of SUTD since 2013 and have come to love the university.
-              I love it so much that I have decided to work as an RA even after graduation.
-            </p>
-            <p>
-              But fate is not so nice. My RA contract is expiring and I can no longer work here.
-              Fortunately, I was able to convince my professor to extend my contract only if I
-              can gather enough support from the SUTD community.
-            </p>
-            <p>
-              As such, I plead to you my friends. Support me! In return I will personally thank
-              you with my lifelong loyalty.
-            </p>
+            <h2 id="blinker" style="text-align: center; color: #e5676f">Will you miss me?</h2>
           </div>
 				</div>
 			</div>
@@ -119,9 +105,9 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
+    <button id="click-me" type="button" style="background-color: white; color: red; border-color: red; width: 20%; height: 10%; position: fixed; top: 35%; left: 40%; z-index:100;">CLICK ME!!</button>
 
     <div class="container marketing">
-
       <div class="row">
         <div class="col-lg-12">
         <!-- <h1>About Me</h1> -->
@@ -243,12 +229,22 @@
 	<script>
 		$(window).on('load',function(){
 				// $('#modal-form').modal('show');
-        // $('#modal-ahnaf-face').modal('show');
+        $('#modal-ahnaf-face').modal('show');
         console.log('js loaded');
         $('#number').click(function(){
-          console.log('number clicked');
           $('#modal-form').modal('show');
         });
+        $('#click-me').click(function(){
+          $('#modal-form').modal('show');
+        });
+        function blink(item) {
+            $('#blinker').fadeOut(500);
+            $('#blinker').fadeIn(500);
+            $('#click-me').fadeOut(500);
+            $('#click-me').fadeIn(500);
+        }
+
+        setInterval(blink, 1000);
         console.log('js loaded2 ');
     });
 	</script>
@@ -277,21 +273,21 @@
 						$('#response-count').html(response.result.values.length.toString());
 						var carousel_html = ''
 						var carousel_base_html = '<div class="carousel-item active"><img class="first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
-						
+
 						var result = response.result.values;
 						for (var i = 0; i < result.length; i++) {
 							if (i==1){
 								var carousel_base_html = carousel_base_html.replace('<div class="carousel-item active">', '<div class="carousel-item">');
 							}
-						
+
 							var item = carousel_base_html.replace('[link-img]', result[i][2]);
 							var item = item.replace('[name]', result[i][3]);
 							var item = item.replace('[message]', result[i][1]);
 							carousel_html += item;
 						}
-						
+
 						$('#myCarouselInner').html(carousel_html);
-						
+
 						var carousel_ol_html = ''
 						for (var i = 0; i < result.length; i++) {
 							carousel_ol_html+='<li data-target="#myCarousel" data-slide-to="' + i.toString()
@@ -300,18 +296,17 @@
 							}
 							carousel_ol_html += '"></li>'
 						}
-						
+
 						$('#myCarouselOl').html(carousel_ol_html);
-						
+
 						$('#myCarousel').carousel({interval:1000});
-						
 						console.log('got some response from google api');
 					}, function(error) {
 						console.error("Execute error", error);
 					});
 		}
 		gapi.load("client");
-	
+
 		$(window).on('load',function(){
 				console.log( "ready!" );
 				loadClient().then(execute);
