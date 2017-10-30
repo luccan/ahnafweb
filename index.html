@@ -280,6 +280,10 @@
 						
 						var result = response.result.values;
 						for (var i = 0; i < result.length; i++) {
+							if (i==1){
+								var carousel_base_html = carousel_base_html.replace('<div class="carousel-item active">', '<div class="carousel-item">');
+							}
+						
 							var item = carousel_base_html.replace('[link-img]', result[i][2]);
 							var item = item.replace('[name]', result[i][3]);
 							var item = item.replace('[message]', result[i][1]);
@@ -296,6 +300,8 @@
 							}
 							carousel_ol_html += '"></li>'
 						}
+						
+						$('#myCarouselOl').html(carousel_html);
 						
 						$('#myCarousel').carousel();
 						
