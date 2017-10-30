@@ -135,3 +135,7 @@ body {
 .carousel-caption{
 	margin-bottom: -15px !important;
 }
+
+.lead.smaller{
+	font-size:18px;
+}
