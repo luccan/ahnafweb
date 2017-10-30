@@ -121,5 +121,9 @@ body {
     width: 15%;
     color: #fff;
     text-align: center;
-    opacity: .5;
+    opacity: .3;
+}
+
+.glyphicon{
+	font-size:4em;
 }
