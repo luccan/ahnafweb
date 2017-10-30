@@ -182,7 +182,7 @@
       <!-- carousel -->
     <div class="container-fluid" style="padding: 0;">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
+        <ol id="myCarouselOl" class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li>
@@ -276,6 +276,10 @@
 
 						var result = response.result.values;
 						for (var i = 0; i < result.length; i++) {
+							if (i==1){
+								var carousel_base_html = carousel_base_html.replace('<div class="carousel-item active">', '<div class="carousel-item">');
+							}
+
 							var item = carousel_base_html.replace('[link-img]', result[i][2]);
 							var item = item.replace('[name]', result[i][3]);
 							var item = item.replace('[message]', result[i][1]);
@@ -284,6 +288,18 @@
 
 						$('#myCarouselInner').html(carousel_html);
 
+						var carousel_ol_html = ''
+						for (var i = 0; i < result.length; i++) {
+							carousel_ol_html+='<li data-target="#myCarousel" data-slide-to="' + i.toString()
+							if(i==0){
+								carousel_ol_html += ' class="active"'
+							}
+							carousel_ol_html += '"></li>'
+						}
+
+						$('#myCarouselOl').html(carousel_ol_html);
+
+						$('#myCarousel').carousel({interval:1000});
 						console.log('got some response from google api');
 					}, function(error) {
 						console.error("Execute error", error);
