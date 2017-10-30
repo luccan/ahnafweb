@@ -156,7 +156,7 @@
           </p>
           <p>Have you guys heard of this amazing feature by DBS called <span style="font-weight: bold; font-size: 16px; color: red;">PAYLAH!</span></p>
           <p>Support me @ <a id="number" style="color: blue; font-weight: bold; font-size: 20px">8681 3648</a>
-          <p><span id="response-count"></span> 💖 supporters</p>
+          <p>I have <span id="response-count"></span> 💖 supporters</p>
         </div>
       </div>
 
@@ -257,7 +257,7 @@
           var adjective = ['annoying', 'chocolaty', 'kissable', 'thick-skinned', 'slow', 'heavenly smelling'];
           var noun = ['pussy', 'sloth', 'apache helicopter', 'deodrant'];
           var finalMessage = message[Math.floor(Math.random() * message.length)] + ' ' + adjective[Math.floor(Math.random() * adjective.length)] + ' ' + noun[Math.floor(Math.random() * noun.length)];
-          document.getElementById('form-message').text = finalMessage;
+          $('#form-message').text = finalMessage;
         });
         $('#click-me').click(function(){
           $('#modal-form').modal('show');
@@ -265,7 +265,7 @@
           var adjective = ['annoying', 'chocolaty', 'kissable', 'thick-skinned', 'slow', 'heavenly smelling','lovely','brilliant','enjoyable','funny','tasty','handsome','disgusting','entertaining','fuckable','muscular','toned','fat','lazy','beer-bellied','haraam','halaal'];
           var noun = ['pussy', 'sloth', 'apache helicopter', 'deodrant','twat','lad','hunk','woman','transvestite','Research Assistant','man','boy','kid','girl','zombie','dude','bro','animal','beast'];
           var finalMessage = message[Math.floor(Math.random() * message.length)] + ' ' + adjective[Math.floor(Math.random() * adjective.length)] + ' ' + noun[Math.floor(Math.random() * noun.length)];
-          document.getElementById('form-message').text = finalMessage;
+          ('#form-message').text = finalMessage;
         });
         function blink(item) {
             $('#blinker').fadeOut(500);
@@ -339,7 +339,8 @@
 						}
 
 						$('#myCarouselInner').html(carousel_html);
-
+						
+						/*
 						var carousel_ol_html = ''
 						for (var i = 0; i < Math.min(result.length,max_item); i++) {
 							carousel_ol_html+='<li data-target="#myCarousel" data-slide-to="' + i.toString()
@@ -350,6 +351,9 @@
 						}
 
 						$('#myCarouselOl').html(carousel_ol_html);
+						*/
+						
+						$('#myCarouselOl').html('');
 
 						$('#myCarousel').carousel({interval:1000});
 						console.log('got some response from google api');
