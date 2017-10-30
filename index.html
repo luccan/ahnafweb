@@ -27,7 +27,6 @@
 
  <body>
 		<p id="response-count"></p>
- 
 		<!-- Modal -->
 		<div id="modal-form" class="modal fade" role="dialog">
 			<div class="modal-dialog">
@@ -41,15 +40,15 @@
 				<div class="modal-body">
 					<form id="sample-form" onsubmit="
 						var form_url = 'https://docs.google.com/forms/d/e/1FAIpQLSfOjtC25-5LLRK0r4am4rZU71qCo8gumkSak5580bkDqFyRvw/formResponse?';
-						
+
 						form_url+= 'entry.1583215347=' + document.getElementById('form-know-me').value;
 						form_url+= '&entry.1471964255=' + document.getElementById('form-message').value;
 						form_url+= '&entry.797727127=' + document.getElementById('form-img-link').value;
 						form_url+= '&entry.725525385=' + document.getElementById('form-name').value;
 						form_url+= '&entry.1593311101=' + document.getElementById('form-contact').value;
-						
+
 						window.open(form_url, '_blank');
-						
+
 						return false;">
 					<div class="row"><div class="col-xs-12"><p class="lead" style="font-weight:bolder;text-align:center;margin-bottom: 0px;">
 						Sample Form
@@ -110,72 +109,85 @@
 			</div>
 		</div>
 
+    <!-- Jumbotron landing with ahnaf's face -->
+    <div class="jumbotron jumbotron-fluid" style="padding: 0; margin:0">
+      <div class="container-fluid" style="padding: 0">
+        <img src="./img/journey.jpg" width="100%"/>
+      </div>
+    </div>
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
+
     <div class="container marketing">
 
+      <div class="row">
+        <div class="col-lg-12">
+        <!-- <h1>About Me</h1> -->
+          <p style="padding-top: 20px">
+            Thank you for coming to my website. I hope you will hear me out.
+            I have been a part of SUTD since 2013 and have come to love the university.
+            I love it so much that I have decided to work as an RA even after graduation.
+          </p>
+          <p>
+            But fate is not so nice. My RA contract is expiring and I can no longer work here.
+            Fortunately, I was able to convince my professor to extend my contract only if I
+            can gather enough support from the SUTD community.
+          </p>
+          <p style="padding-bottom: 20px">
+            As such, I plead to you my friends. Support me! In return I will personally thank
+            you with my lifelong loyalty.
+          </p>
+          <p>Have you guys heard of this amazing feature by DBS called <span style="font-weight: bold; font-size: 16px; color: red;">PAYLAH!</span></p>
+          <p>Support me @ <a id="number" style="color: blue; font-weight: bold; font-size: 20px">8681 3648</a>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="rounded-circle" src="./img/sample.jpg" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <!-- <div class="col-lg-4" style="padding: 5px"> -->
+            <img class="rounded-circle" src="./img/fireworks.jpg" height="200" style="padding-bottom:10px; border-radius: 20%">
+          <!-- </div> -->
+          <!-- <div class="col-lg-8" style="padding: 5px; padding-top:30px"> -->
+            <!-- <h2>Heading</h2> -->
+            <p>'Cause baby you're a firework<br>
+              Come on show 'em what your worth<br>
+              Make 'em go "Oh, oh, oh!"<br>
+              As you shoot across the sky-y-y'<br> - Katy Perry</p>
+            <p>I really felt like a firework during my time here in SUTD.</p>
+          <!-- </div> -->
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="rounded-circle" src="./img/sample.jpg" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <!-- <div class="col-lg-4" style="padding: 5px"> -->
+            <img class="rounded-circle" src="./img/sleep.jpg" height="200" style="padding-bottom:10px; border-radius: 20%">
+          <!-- </div> -->
+          <!-- <div class="col-lg-8" style="padding: 5px"> -->
+            <p>
+              From this slumber<br>
+              You shall wake<br>
+              When true love's kiss<br>
+              The spell shall break<br>
+              - The Sleeping Beauty
+            </p>
+            <p>
+              No one broke my spell, so I had to wake up myself.
+            </p>
+          <!-- </div> -->
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="rounded-circle" src="./img/sample.jpg" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <img class="rounded-circle" src="./img/bear.jpg" height="200" style="padding-bottom:10px; border-radius: 20%">
+            <p>
+              All my life I was lonely.<br>
+              But here in SUTD I felt the warmth of a big bear always hugging me.
+            </p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
 
       <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto" data-src="./img/sample.jpg" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 push-md-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 pull-md-7">
-          <img class="featurette-image img-fluid mx-auto" data-src="./img/sample.jpg" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto" data-src="./img/sample.jpg" alt="Generic placeholder image">
-        </div>
-      </div>
 
       <hr class="featurette-divider">
 
@@ -250,11 +262,17 @@
 	<!--animation scripts-->
 	<script>
 		$(window).on('load',function(){
-				$('#modal-form').modal('show');
-        //$('#modal-ahnaf-face').modal('show');
+				// $('#modal-form').modal('show');
+        // $('#modal-ahnaf-face').modal('show');
+        console.log('js loaded');
+        $('#number').click(function(){
+          console.log('number clicked');
+          $('#modal-form').modal('show');
+        });
+        console.log('js loaded2 ');
     });
 	</script>
-	
+
 	<!--google api-->
 	<script src="https://apis.google.com/js/api.js"></script>
 	<script>
