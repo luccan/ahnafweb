@@ -299,6 +299,7 @@
 		$(window).on('load',function(){
 				console.log( "ready!" );
 				authenticate().then(loadClient).then(execute);
+				execute();
 		});
 	</script>
 	<button onclick="authenticate().then(loadClient)">authorize and load</button>
