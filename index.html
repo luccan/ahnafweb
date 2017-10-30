@@ -258,16 +258,8 @@
 	<!--google api-->
 	<script src="https://apis.google.com/js/api.js"></script>
 	<script>
-		function authenticate() {
-			return gapi.auth2.getAuthInstance()
-					.signIn({scope: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.readonly"})
-					.then(function() {
-						console.log("Sign-in successful");
-					}, function(error) {
-						console.error("Error signing in", error);
-					});
-		}
 		function loadClient() {
+			gapi.client.setApiKey('AIzaSyDDgfTdBzh-W8VIE0lvcFqZ0Ne2YzAPSHo');
 			return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/sheets/v4/rest")
 					.then(function() {
 						console.log("GAPI client loaded for API");
@@ -275,7 +267,7 @@
 						console.error("Error loading GAPI client for API");
 					});
 		}
-		// Make sure the client is loaded and sign-in is complete before calling this method.
+		// Make sure the client is loaded before calling this method.
 		function execute() {
 			return gapi.client.sheets.spreadsheets.values.get({
 				"spreadsheetId": "1NLXEzIB5_0v1NsbbPs8BoADQGjvPBar4rxjYpSDMgms",
@@ -290,19 +282,15 @@
 						console.error("Execute error", error);
 					});
 		}
-		gapi.load("client:auth2", function() {
-			gapi.auth2.init({client_id: 'AIzaSyDDgfTdBzh-W8VIE0lvcFqZ0Ne2YzAPSHo'});
-			//gapi.auth2.init({client_id: '437510511554-3onqr2lg47b7pl7ieebk19u8mjthtc4i.apps.googleusercontent.com'});
-		});
-		
-		
+		gapi.load("client");
+	
 		$(window).on('load',function(){
 				console.log( "ready!" );
-				authenticate().then(loadClient).then(execute);
-				execute();
+				loadClient().then(execute);
+				//execute();
 		});
 	</script>
-	<button onclick="authenticate().then(loadClient)">authorize and load</button>
+	<button onclick="loadClient()">authorize and load</button>
 	<button onclick="execute()">execute</button>
 
 
