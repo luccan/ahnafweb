@@ -25,11 +25,11 @@ body {
 }
 
 /* Declare heights because of positioning of img element */
-.carousel-item {
+.item {
   background-color: #777;
   height:8rem;
 }
-.carousel-item > img {
+.item > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -118,8 +118,12 @@ body {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 15%;
+    //width: 15%;
     color: #fff;
     text-align: center;
-    opacity: .5;
+    opacity: .3;
+}
+
+.glyphicon{
+	font-size:4em;
 }
