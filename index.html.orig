@@ -156,7 +156,7 @@
           </p>
           <p>Have you guys heard of this amazing feature by DBS called <span style="font-weight: bold; font-size: 16px; color: red;">PAYLAH!</span></p>
           <p>Support me @ <a id="number" style="color: blue; font-weight: bold; font-size: 20px">8681 3648</a>
-          <p><span id="response-count"></span> 💖 supporters</p>
+          <p id="response-count"> 💖 supporters</p>
         </div>
       </div>
 
@@ -249,8 +249,6 @@
 
     </div><!-- /.container -->
 
-		<p type="button" style="background-color: white; opacity: 0.5; width: 20%; height: 10%; position: fixed; bottom: 14rem; left: 20px; z-index:11;">SUPPORT ME!!</p>
-		
     <!-- jQuery -->
     <script src="./js/jquery.min.js"></script>
 
@@ -313,7 +311,11 @@
 						console.log("Response", response);
 						$('#response-count').html(response.result.values.length.toString());
 						var carousel_html = ''
+<<<<<<< HEAD
 						var carousel_base_html = '<div class="carousel-item active"><img class="first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
+=======
+						var carousel_base_html = '<div class="item active"><img class="img-responsive first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h5>[name]</h1><p>[message]</p></div></div></div>'
+>>>>>>> b631bafc50a4783fa0fe2b542ff2121826a78da0
 
 						var result = response.result.values;
 						for (var i = 0; i < result.length; i++) {
