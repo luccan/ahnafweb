@@ -48,6 +48,9 @@
 						form_url+= '&entry.1593311101=' + document.getElementById('form-contact').value;
 
 						window.open(form_url, '_blank');
+						
+						$('#modal-form').modal('toggle');
+						document.getElementById('sample-form').reset();
 
 						return false;">
 					<div class="row">
