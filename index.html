@@ -213,28 +213,17 @@
     <div class="container-fluid" style="padding: 0;">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol id="myCarouselOl" class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
+          
         </ol>
         <div id="myCarouselInner" class="carousel-inner" role="listbox">
-          <div class="carousel-item active">
-            <img class="first-slide" src="./img/sample.jpg">
-            <div class="container">
-              <div class="carousel-caption d-none d-md-block text-left">
-                <h1>Example headline.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-              </div>
-            </div>
-          </div>
+          
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
@@ -311,12 +300,12 @@
 						console.log("Response", response);
 						$('#response-count').html(response.result.values.length.toString());
 						var carousel_html = ''
-						var carousel_base_html = '<div class="carousel-item active"><img class="first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
+						var carousel_base_html = '<div class="item active"><img class="img-responsive first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h5>[name]</h1><p>[message]</p></div></div></div>'
 
 						var result = response.result.values;
 						for (var i = 0; i < result.length; i++) {
 							if (i==1){
-								var carousel_base_html = carousel_base_html.replace('<div class="carousel-item active">', '<div class="carousel-item">');
+								var carousel_base_html = carousel_base_html.replace('<div class="item active">', '<div class="item">');
 							}
 
 							var item = carousel_base_html.replace('[link-img]', result[i][2]);
@@ -338,10 +327,11 @@
 
 						$('#myCarouselOl').html(carousel_ol_html);
 
-						$('#myCarousel').carousel({interval:1000});
 						console.log('got some response from google api');
 					}, function(error) {
 						console.error("Execute error", error);
+					}).then(function(){
+						$('#myCarousel').carousel({interval:1000});
 					});
 		}
 		gapi.load("client");
@@ -352,8 +342,8 @@
 				//execute();
 		});
 	</script>
-	<button onclick="loadClient()">authorize and load</button>
-	<button onclick="execute()">execute</button>
+	<!--button onclick="loadClient()">authorize and load</button>
+	<button onclick="execute()">execute</button-->
 
 
 </body>
