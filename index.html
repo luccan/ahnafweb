@@ -105,9 +105,9 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
+    <button id="click-me" type="button" style="background-color: white; color: red; border-color: red; width: 20%; height: 10%; position: fixed; top: 35%; left: 40%; z-index:100;">CLICK ME!!</button>
 
     <div class="container marketing">
-
       <div class="row">
         <div class="col-lg-12">
         <!-- <h1>About Me</h1> -->
@@ -234,9 +234,14 @@
         $('#number').click(function(){
           $('#modal-form').modal('show');
         });
-        function blink() {
+        $('#click-me').click(function(){
+          $('#modal-form').modal('show');
+        });
+        function blink(item) {
             $('#blinker').fadeOut(500);
             $('#blinker').fadeIn(500);
+            $('#click-me').fadeOut(500);
+            $('#click-me').fadeIn(500);
         }
 
         setInterval(blink, 1000);
@@ -268,7 +273,7 @@
 						$('#response-count').html(response.result.values.length.toString());
 						var carousel_html = ''
 						var carousel_base_html = '<div class="carousel-item active"><img class="first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
-						
+
 						var result = response.result.values;
 						for (var i = 0; i < result.length; i++) {
 							var item = carousel_base_html.replace('[link-img]', result[i][2]);
@@ -276,9 +281,9 @@
 							var item = item.replace('[message]', result[i][1]);
 							carousel_html += item;
 						}
-						
+
 						$('#myCarouselInner').html(carousel_html);
-						
+
 						console.log('got some response from google api');
 					}, function(error) {
 						console.error("Execute error", error);
