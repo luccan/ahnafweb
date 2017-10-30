@@ -261,7 +261,7 @@
 						console.log("Response", response);
 						$('#response-count').html(response.result.values.length.toString());
 						var carousel_html = ''
-						var carousel_base_html = '<div class="item active"><img class="first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
+						var carousel_base_html = '<div class="item active"><img class="img-responsive first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
 
 						var result = response.result.values;
 						for (var i = 0; i < result.length; i++) {
