@@ -26,7 +26,7 @@
 </head>
 
  <body>
-		<p id="response-count"></p>
+		<!-- <p id="response-count"></p> -->
 		<!-- Modal -->
 		<div id="modal-form" class="modal fade" role="dialog">
 			<div class="modal-dialog">
@@ -134,7 +134,7 @@
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <button id="click-me" type="button" style="background-color: white; color: red; border-color: red; width: 20%; height: 10%; position: fixed; top: 35%; left: 40%; z-index:100;">CLICK ME!!</button>
+    <button id="click-me" type="button" style="background-color: white; color: red; border-color: red; width: 20%; height: 10%; position: fixed; top: 35%; left: 40%; z-index:100;">SUPPORT ME!!</button>
 
     <div class="container marketing">
       <div class="row">
@@ -156,6 +156,7 @@
           </p>
           <p>Have you guys heard of this amazing feature by DBS called <span style="font-weight: bold; font-size: 16px; color: red;">PAYLAH!</span></p>
           <p>Support me @ <a id="number" style="color: blue; font-weight: bold; font-size: 20px">8681 3648</a>
+          <p id="response-count"> 💖 supporters</p>
         </div>
       </div>
 
@@ -212,17 +213,28 @@
     <div class="container-fluid" style="padding: 0;">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol id="myCarouselOl" class="carousel-indicators">
-          
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
         <div id="myCarouselInner" class="carousel-inner" role="listbox">
-          
+          <div class="carousel-item active">
+            <img class="first-slide" src="./img/sample.jpg">
+            <div class="container">
+              <div class="carousel-caption d-none d-md-block text-left">
+                <h1>Example headline.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              </div>
+            </div>
+          </div>
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
@@ -232,7 +244,7 @@
     <div class="container">
       <footer>
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2017 Ahnaf Siddiqi Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
     </div><!-- /.container -->
@@ -299,12 +311,12 @@
 						console.log("Response", response);
 						$('#response-count').html(response.result.values.length.toString());
 						var carousel_html = ''
-						var carousel_base_html = '<div class="item active"><img class="img-responsive first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
+						var carousel_base_html = '<div class="carousel-item active"><img class="first-slide" src="[link-img]"><div class="container"><div class="carousel-caption d-none d-md-block text-left"><h1>[name]</h1><p>[message]</p></div></div></div>'
 
 						var result = response.result.values;
 						for (var i = 0; i < result.length; i++) {
 							if (i==1){
-								var carousel_base_html = carousel_base_html.replace('<div class="item active">', '<div class="item">');
+								var carousel_base_html = carousel_base_html.replace('<div class="carousel-item active">', '<div class="carousel-item">');
 							}
 
 							var item = carousel_base_html.replace('[link-img]', result[i][2]);
@@ -326,11 +338,10 @@
 
 						$('#myCarouselOl').html(carousel_ol_html);
 
+						$('#myCarousel').carousel({interval:1000});
 						console.log('got some response from google api');
 					}, function(error) {
 						console.error("Execute error", error);
-					}).then(function(){
-						$('#myCarousel').carousel({interval:1000});
 					});
 		}
 		gapi.load("client");
@@ -341,8 +352,8 @@
 				//execute();
 		});
 	</script>
-	<!--button onclick="loadClient()">authorize and load</button>
-	<button onclick="execute()">execute</button-->
+	<button onclick="loadClient()">authorize and load</button>
+	<button onclick="execute()">execute</button>
 
 
 </body>
