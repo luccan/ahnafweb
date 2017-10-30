@@ -86,22 +86,8 @@
 				<div class="modal-body">
 				  <img class="img-responsive" src="./img/grad.jpg" alt="myFace"></img>
           <hr>
-          <h5>Hello, I am Ahnaf</h5>
           <div>
-            <p>
-              Thank you for coming to my website. I hope you will hear me out.
-              I have been a part of SUTD since 2013 and have come to love the university.
-              I love it so much that I have decided to work as an RA even after graduation.
-            </p>
-            <p>
-              But fate is not so nice. My RA contract is expiring and I can no longer work here.
-              Fortunately, I was able to convince my professor to extend my contract only if I
-              can gather enough support from the SUTD community.
-            </p>
-            <p>
-              As such, I plead to you my friends. Support me! In return I will personally thank
-              you with my lifelong loyalty.
-            </p>
+            <h2 id="blinker" style="text-align: center; color: #e5676f">Will you miss me?</h2>
           </div>
 				</div>
 			</div>
@@ -263,12 +249,17 @@
 	<script>
 		$(window).on('load',function(){
 				// $('#modal-form').modal('show');
-        // $('#modal-ahnaf-face').modal('show');
+        $('#modal-ahnaf-face').modal('show');
         console.log('js loaded');
         $('#number').click(function(){
-          console.log('number clicked');
           $('#modal-form').modal('show');
         });
+        function blink() {
+            $('#blinker').fadeOut(500);
+            $('#blinker').fadeIn(500);
+        }
+
+        setInterval(blink, 1000);
         console.log('js loaded2 ');
     });
 	</script>
@@ -301,7 +292,7 @@
 					});
 		}
 		gapi.load("client");
-	
+
 		$(window).on('load',function(){
 				console.log( "ready!" );
 				loadClient().then(execute);
