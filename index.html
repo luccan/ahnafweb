@@ -253,24 +253,22 @@
 
 	<!--animation scripts-->
 	<script>
+		function showForm(){
+			$('#modal-form').modal('show');
+				  var message = ['Good Bye', 'See you soon', 'I love you', 'We will miss you', 'You have lovely lips', 'Your eyes stare into my soul','Good luck on your journey','Adios','Sampai Jumpa','Ta-ta,','Bidai', 'I hope you will remember me,', 'Remember our first meeting? You','I will remember you', 'I will not forget you, you','Ciaoz'];
+				  var adjective = ['annoying', 'chocolaty', 'kissable', 'thick-skinned', 'slow', 'heavenly smelling','lovely','brilliant','enjoyable','funny','tasty','handsome','entertaining','muscular','toned','fat','lazy','extraordinary','special kind of','passionate'];
+				  var noun = ['apache helicopter', 'deodorant','lad','hunk','Research Assistant','man','boy','kid','dude','bro','animal','beast','snowflake','cornflake','teacher','human being','Homosapiens','bugger','husband','wife'];
+				  var finalMessage = message[Math.floor(Math.random() * message.length)] + ' ' + adjective[Math.floor(Math.random() * adjective.length)] + ' ' + noun[Math.floor(Math.random() * noun.length)];
+				  $('#form-message').text(finalMessage);
+		}
 		$(window).on('load',function(){
 				// $('#modal-form').modal('show');
         $('#modal-ahnaf-face').modal('show');
         $('#number').click(function(){
-          $('#modal-form').modal('show');
-          var message = ['Good Bye', 'See you soon', 'I love you', 'We will miss you', 'You have lovely lips', 'Your eyes stare into my soul','Good luck on your journey','Fuck you and your ass you','Adios','Sampai Jumpa','Ta-ta,','Bidai','I hope I will never ever see you again', 'I hope you will remember me,', 'Remember our first meeting? You','I will remember you', 'I will not forget you, you','Ciaoz'];
-          var adjective = ['annoying', 'chocolaty', 'kissable', 'thick-skinned', 'slow', 'heavenly smelling','lovely','brilliant','enjoyable','funny','tasty','handsome','disgusting','entertaining','fuckable','muscular','toned','fat','lazy','beer-bellied','haraam','halaal'];
-          var noun = ['pussy', 'sloth', 'apache helicopter', 'deodrant','twat','lad','hunk','woman','transvestite','Research Assistant','man','boy','kid','girl','zombie','dude','bro','animal','beast'];
-          var finalMessage = message[Math.floor(Math.random() * message.length)] + ' ' + adjective[Math.floor(Math.random() * adjective.length)] + ' ' + noun[Math.floor(Math.random() * noun.length)];
-          $('#form-message').text(finalMessage);
+          showForm();
         });
         $('#click-me').click(function(){
-          $('#modal-form').modal('show');
-          var message = ['Good Bye', 'See you soon', 'I love you', 'We will miss you', 'You have lovely lips', 'Your eyes stare into my soul','Good luck on your journey','Fuck you and your ass you','Adios','Sampai Jumpa','Ta-ta,','Bidai','I hope I will never ever see you again', 'I hope you will remember me,', 'Remember our first meeting? You','I will remember you', 'I will not forget you, you','Ciaoz'];
-          var adjective = ['annoying', 'chocolaty', 'kissable', 'thick-skinned', 'slow', 'heavenly smelling','lovely','brilliant','enjoyable','funny','tasty','handsome','disgusting','entertaining','fuckable','muscular','toned','fat','lazy','beer-bellied','haraam','halaal'];
-          var noun = ['pussy', 'sloth', 'apache helicopter', 'deodrant','twat','lad','hunk','woman','transvestite','Research Assistant','man','boy','kid','girl','zombie','dude','bro','animal','beast'];
-          var finalMessage = message[Math.floor(Math.random() * message.length)] + ' ' + adjective[Math.floor(Math.random() * adjective.length)] + ' ' + noun[Math.floor(Math.random() * noun.length)];
-          $('#form-message').text(finalMessage);
+          showForm();
         });
         function blink(item) {
             $('#blinker').fadeOut(500);
