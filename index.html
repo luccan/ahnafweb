@@ -4,7 +4,7 @@
 
 <head>
 
-	<meta name="google-site-verification" content="JFRv31hybviO9ajsRf2YNFTvHPnxkKg4op7HxzAD8Pw" />
+	<meta name="google-site-verification" content="JFRv31hybviO9ajsRf2YNFTvHPnx	kKg4op7HxzAD8Pw" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -347,7 +347,8 @@
 							carousel_html += item;
 						}
 
-						carousel_html = carousel_html.replace('<script>','');		
+						carousel_html = carousel_html.replace('<script>','');
+						carousel_html = carousel_html.replace('</script>','');
 				
 						$('#myCarouselInner').html(carousel_html);
 						
