@@ -347,6 +347,8 @@
 							carousel_html += item;
 						}
 
+						carousel_html = carousel_html.replace('<script>','');		
+				
 						$('#myCarouselInner').html(carousel_html);
 						
 						/*
